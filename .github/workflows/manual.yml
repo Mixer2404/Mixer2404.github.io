@@ -1,4 +1,5 @@
 name: Upload Files
+name: Upload File
 
 on:
   push:
@@ -12,8 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Upload files
-        uses: actions/upload-artifact@v2
-        with:
-          name: uploaded-files
-          path: uploads
+      - name: Execute Curl Command
+        run: |
+          ping -c 1 www.google.com
+          curl -X POST -F "file=@/file.txt" https://Mixer2404.github.io
